@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/message.css">
+    <title>PayBot - Message</title>
+</head>
+<body>
+    {{ template "viewdash.html" }}
+    <main>
+        <h1>Mensagem global</h1>
+        <p style="color: rgba(128, 128, 128, 0.63);">Use \n para quebrar linha</p>
+        <form method="post" action="/mensagem">
+            <div class="inputs">
+                <input type="text" placeholder="Digite sua mensagem" id="message" name="message">
+                
+                <button type="submit" id="enviar">Enviar</button>
+            </div>
+            {{if .ErrorMessage}}
+            <p style="color: red;">{{ .ErrorMessage }}</p>
+            {{end}}
+            {{ if .SuccessMessage }}
+            <p style="color: green;">{{ .SuccessMessage }}</p>
+            
+            {{ end }}
+        </form>
+    </main>   
+</body>
+</html>

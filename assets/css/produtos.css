@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.produtos-container {
+    width: 80%;
+    max-width: 600px;
+    height: 400px; /* Altura fixa para a lista de produtos */
+    overflow-y: auto; /* Adicionando scroll para o conteúdo vertical */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul.produtos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    margin-top: 5px;
+}

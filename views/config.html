@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/config.css">
+    <title>PayBot - Tokens</title>
+</head>
+<body>
+    {{template "viewdash.html"}}
+    <form action="/config" method="post">
+        <div class="cartao">
+            <div class="titulo-cartao">
+                <h1>Página Configuração</h1>
+            </div>
+            <div class="corpo-cartao">
+                <select name="opcao" id="opcao">
+                    <option value="telegram">Telegram</option>
+                    <option value="banco">Mercado Pago</option>
+                    <option value="chatID">ChatID</option>
+                </select>
+                <input type="text" placeholder="Conteúdo aqui" name="input">
+                <button type="submit">Alterar</button>
+                {{if .ErrorMessage}}
+                <center><p style="color: red;">{{.ErrorMessage}}</p></center>
+                {{end}}
+                {{if .SuccessMessage}}
+                <center><p style="color: green;">{{ .SuccessMessage }}</p></center>
+                {{end}}
+            </div>
+        </div>
+    </form>
+</body>
+</html>

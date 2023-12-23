@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/add-produto.css">
+    <title>PayBot - Add-Produto</title>
+</head>
+
+<body>
+    {{template "viewdash.html"}}
+    <div class="container">
+        <form class="form-produto" action="/add-produtos" method="post">
+            <input class="input-nome" type="text" name="nome" placeholder="nome">
+            <input class="input-conteudo" type="text" name="conteudo" placeholder="conteudo">
+            <input class="input-valor" type="number" name="valor" placeholder="valor">
+            <button class="btn-adicionar" type="submit">Adicionar</button>
+            {{if .ErrorMessage}}
+            <p class="error-message">Erro ao criar produto</p>
+            {{end}}
+            {{if .SuccessMessage}}
+            <p class="success-message">Produto adicionado</p>
+            {{end}}
+        </form>
+    </div>
+</body>
+
+</html>
